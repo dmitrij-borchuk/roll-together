@@ -15,5 +15,5 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig)
 
 if (process.env.NODE_ENV === 'development') {
-  const analytics = getAnalytics(app)
+  getAnalytics(app)
 }
