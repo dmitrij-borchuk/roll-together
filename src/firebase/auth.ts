@@ -1,4 +1,5 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup, User } from 'firebase/auth'
+import { useMemo } from 'react'
 import { app } from './app'
 
 export const auth = getAuth(app)
@@ -39,4 +40,8 @@ export function getUser() {
   }
 
   return JSON.parse(str) as User
+}
+
+export function useUser() {
+  return useMemo(() => getUser(), [])
 }
